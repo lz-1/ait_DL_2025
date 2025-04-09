@@ -27,3 +27,18 @@ Testing
 We test our model on ERA5, a reanalysis climate product which is often used as a proxy for observations
 
 
+
+Instructions:
+How to acquire the data:
+Data is accessed here:
+https://www.cesm.ucar.edu/community-projects/lens2
+
+I downloaded the data locally so I wouldn't need to pull from the server every time. The data is too large to put into Github. Here's is a google drive link to it:
+https://drive.google.com/drive/folders/1R9ZXaIRMBmohVfNaAeBQJYGgiUgyojIq?usp=sharing
+
+How to run the code:
+Add the Google Drive folder with the data to your personal drive. Then when you mount google drive, the file path should go directly to the data as desired.
+
+requirements.txt lists all python packages and their versions
+
+
