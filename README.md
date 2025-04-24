@@ -29,16 +29,39 @@ We test our model on ERA5, a reanalysis climate product which is often used as a
 
 
 Instructions:
-How to acquire the data:
-Data is accessed here:
-https://www.cesm.ucar.edu/community-projects/lens2
 
-I downloaded the data locally so I wouldn't need to pull from the server every time. The data is too large to put into Github. Here's is a google drive link to it:
-https://drive.google.com/drive/folders/1R9ZXaIRMBmohVfNaAeBQJYGgiUgyojIq?usp=sharing
+Because Google Collab has a restricted enviornment, I am unable to import the data via HTTPS/SSL which is the only way the data can be accessed. 
+
+This is the code I ran to get the data on my machine, and then I downlaoded it locally and uploaded it to Google Drive to be used in Google Colab.
+
+```
+url = "https://climatedata.ibs.re.kr:9443/dods/public-data/cesm2-lens/ocn/TEMP/cesm2-lens-TEMP.1850-2100.mon.1x1"
+ds = xr.open_dataset(url)
+print(ds)
+```
+
+The CESM data description used for training and validation is [here](https://www.cesm.ucar.edu/community-projects/lens2).
+
+To obtain ERA5 data, you must request the data based on the following parameters on [this](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels?tab=download) website.
+
+Product type: Reanalysis
+Variable: sea surface temperature
+Years: 1980 to 2020
+Months: Select all
+Day: Select all
+Time: Select all
+Geographical area: Whole available region
+Data format: NetCDF4
+Download format: Unarchived
+
+Similar to the CESM data, I downloaded it and uploaded it to be used in this Google Colab notebook.
 
 How to run the code:
-Add the Google Drive folder with the data to your personal drive. Then when you mount google drive, the file path should go directly to the data as desired.
+After successfully downloading the data, add the Google Drive folder with the data to your personal drive. Then when you mount google drive, the file path should go directly to the data as desired.
 
-requirements.txt lists all python packages and their versions
+
+Make sure to download all the listed python packages. The code should run successfully.
+requirements.txt lists all python packages and their versions.
+
 
 
